@@ -10,9 +10,13 @@ import styles from './main.module.css';
 export default function Dictionary() {
     const [data, setData] = useState(null);
     const [word, setWord] = useState("");
-    const [error, setError] = useState(""); // New state for handling errors
+    const [error, setError] = useState(""); // State for error handling
+    const [loading, setLoading] = useState(false); // State for loading indicator
 
     async function getMeaning() {
+        setLoading(true); // Set loading to true when starting the API call
+        setError(""); // Clear any previous errors
+
         try {
             const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en_US/${word}`);
             const result = await response.json();
@@ -28,6 +32,8 @@ export default function Dictionary() {
             console.error("Error fetching data:", error);
             setError("An error occurred while fetching the data.");
         }
+
+        setLoading(false); // Set loading to false after the API call is complete
     }
 
     function playAudio() {
@@ -60,10 +66,15 @@ export default function Dictionary() {
                 </button>
             </div>
 
+            {/* Show loading circle while data is being fetched */}
+            {loading && (
+                <div className={styles.loadingCircle}></div>
+            )}
+
             {/* Error Message */}
             {error && <p className={styles.error}>{error}</p>}
 
-            {data && (
+            {data && !loading && (
                 <div className="showResults">
                     <h2 className={styles.h2}>{data.word}</h2>
                     <button className={styles.volume}
@@ -91,7 +102,7 @@ export default function Dictionary() {
                     </div>
                 </div>
             )}
-            
+
             <div className={styles.footer}>
                 <a className={styles.name} href="https://harnoordhindsa.vercel.app" target="_blank">Harnoor Dhindsa</a>
                 <div className={styles.socialIcons}>
