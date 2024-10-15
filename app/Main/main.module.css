@@ -1,0 +1,85 @@
+.container { 
+    text-align: center; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 0 25px 0px rgba(0, 0, 0, 0.1); 
+    max-width: 700px; 
+    background: white; 
+    margin: 2rem auto; 
+  } 
+    
+  .heading { 
+    font-size: 35px; 
+    margin-bottom: 20px; 
+    color: #007bff; 
+  } 
+  .heading span { 
+    color: #333; 
+  } 
+    
+  .searchBox { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-bottom: 20px; 
+  } 
+    
+  .Input { 
+    padding: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    width: 100%; 
+    margin-right: 10px; 
+    font-size: 16px; 
+    color: #444; 
+  } 
+    
+  .button { 
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    padding: 12px 20px; 
+    font-size: 16px; 
+  } 
+    
+  .button:hover { 
+    background-color: #0056b3; 
+  } 
+    
+  .showResults { 
+    text-align: left; 
+    border: 3px solid #ccc; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    background-color: #fff; 
+    text-transform: capitalize; 
+  } 
+    
+  .h2 { 
+    font-size: 24px; 
+    margin-bottom: 10px; 
+    color: #333; 
+  } 
+    
+  .table { 
+    width: 100%; 
+  } 
+    
+  .tr { 
+    line-height: 1.6; 
+    border-bottom: 1px solid #ccc; 
+    padding: 10px 0; 
+  } 
+    
+  .td:first-child { 
+    font-weight: bold; 
+    width: 30%; 
+    color: #007bff; 
+  } 
+    
+  .tablecontainer { 
+    margin-top: 20px; 
+  }
