@@ -1,85 +1,214 @@
+/* General container styling */
 .container { 
     text-align: center; 
-    padding: 20px; 
-    border-radius: 10px; 
-    box-shadow: 0 0 25px 0px rgba(0, 0, 0, 0.1); 
-    max-width: 700px; 
-    background: white; 
-    margin: 2rem auto; 
-  } 
-    
+    padding: 30px; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+    max-width: 600px; 
+    background: white;
+    color: orangered;
+
+    position: absolute;  /* Allows positioning relative to the viewport */
+    top: 50%;            /* Moves it down by 50% of the viewport height */
+    left: 50%;           /* Moves it to the right by 50% of the viewport width */
+    transform: translate(-50%, -50%);  /* Adjusts the center point to the middle */
+  
+    width: 100%;         /* Full width within the max-width */
+    max-width: 600px;    /* Limit the width of the container */
+  }
+  
+  /* Heading styles */
   .heading { 
-    font-size: 35px; 
-    margin-bottom: 20px; 
-    color: #007bff; 
-  } 
+    font-size: 32px; 
+    margin-bottom: 25px; 
+    color: orangered; 
+    font-weight: 600; 
+  }
+  
   .heading span { 
-    color: #333; 
-  } 
-    
+    color: #000; 
+    font-weight: 700;
+  }
+  
+  /* Search box styling */
   .searchBox { 
     display: flex; 
     justify-content: center; 
     align-items: center; 
-    margin-bottom: 20px; 
-  } 
-    
+    margin-bottom: 25px; 
+    flex-wrap: wrap;
+  }
+
+  .volume{
+    border: 2px solid orangered;
+    padding: 20px;
+    border-radius: 50%;
+    font-size: 25px;
+  }
+
+  .volume:hover{
+    background-color: orangered;
+    color: white;
+  }
+  
+  /* Input field styles */
   .Input { 
-    padding: 12px; 
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
+    padding: 15px; 
+    border: 1px solid #000; 
+    border-radius: 8px; 
     width: 100%; 
+    max-width: 400px; 
     margin-right: 10px; 
     font-size: 16px; 
-    color: #444; 
-  } 
-    
+    color: #000; 
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .Input:focus {
+    box-shadow: 0 0 10px rgba(255, 99, 72, 0.4);
+    border:1px solid orangered;
+  }
+  
+  @media (max-width: 768px) {
+    .Input {
+      margin-right: 0; 
+      margin-bottom: 10px; 
+      width: 100%;
+    }
+  }
+  
+  /* Button styles */
   .button { 
-    background-color: #007bff; 
+    background-color: #ff5e62; 
     color: white; 
     border: none; 
-    border-radius: 5px; 
+    border-radius: 8px; 
     cursor: pointer; 
-    padding: 12px 20px; 
+    padding: 19px; 
     font-size: 16px; 
-  } 
-    
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
   .button:hover { 
-    background-color: #0056b3; 
-  } 
-    
+    background-color: orangered; /* Lighter, friendlier orange */
+    transform: scale(1.05);
+  }
+  
+  .button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 99, 72, 0.5);
+  }
+  
+  /* Results box styling */
   .showResults { 
     text-align: left; 
-    border: 3px solid #ccc; 
+    border: 2px solid #eee; 
     padding: 20px; 
-    border-radius: 10px; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    border-radius: 12px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
     background-color: #fff; 
-    text-transform: capitalize; 
-  } 
-    
+    color: #333;
+    text-transform: capitalize;
+  }
+  
+  /* Header inside result box */
   .h2 { 
-    font-size: 24px; 
-    margin-bottom: 10px; 
-    color: #333; 
-  } 
-    
+    text-decoration: underline;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px; 
+    color: #ff5e62; 
+  }
+  
+  /* Table styling */
   .table { 
     width: 100%; 
-  } 
-    
+    border-collapse: collapse;
+  }
+  
   .tr { 
     line-height: 1.6; 
-    border-bottom: 1px solid #ccc; 
-    padding: 10px 0; 
-  } 
-    
+    border-bottom: 1px solid #eee; 
+    padding: 12px 0; 
+  }
+  
   .td:first-child { 
     font-weight: bold; 
-    width: 30%; 
-    color: #007bff; 
-  } 
-    
+    width: 35%; 
+    color: orangered; 
+  }
+  
+  /* Table container */
   .tablecontainer { 
     margin-top: 20px; 
   }
+
+  /* Other styles... */
+
+.footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.name{
+    font-weight: bold;
+}
+
+.name:hover{
+    color: orangered;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.socialIcons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.socialIcons a {
+    margin: 5px;
+    color: black; /* Customize the icon color */
+    text-decoration: none;
+}
+
+.socialIcons a:hover {
+    color: orangered; /* Hover color for the icons */
+}
+
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .container {
+      padding: 20px;
+      top: 20%;
+      box-shadow: none;
+    }
+  
+    .heading {
+      font-size: 28px;
+    }
+  
+    .button {
+      padding: 19px 70px;
+      font-size: 14px;
+    }
+  
+    .showResults {
+      padding: 15px;
+    }
+  
+    .h2 {
+      font-size: 20px;
+    }
+    .footer{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  

@@ -3,6 +3,8 @@ import { useState } from "react";
 
 import { IoMdVolumeHigh } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa6";
 import styles from './main.module.css';
 
 
@@ -52,7 +54,7 @@ export default function Dictionary() {
           {data && ( 
             <div className="showResults"> 
               <h2 className={styles.h2}>{data.word}</h2> 
-              <button 
+              <button className={styles.volume}
                 onClick={() => { 
                   playAudio(); 
                 }} 
@@ -76,7 +78,18 @@ export default function Dictionary() {
                 </table> 
               </div> 
             </div> 
-          )} 
-        </div> 
+          )}
+          <div className={styles.footer}>
+                <a className={styles.name} href="https://harnoordhindsa.vercel.app" target="_blank">Harnoor Dhindsa</a>
+                <div className={styles.socialIcons}>
+                    <a href="https://github.com/Harnoor-Dhindsa" target="_blank" rel="noopener noreferrer">
+                        <FaGithub size={20} />
+                    </a>
+                    <a href="https://www.linkedin.com/in/harnoor-dhindsa-930a62303/" target="_blank" rel="noopener noreferrer">
+                        <FaLinkedin size={20} />
+                    </a>
+                </div>
+            </div>
+        </div>
       );
 };
